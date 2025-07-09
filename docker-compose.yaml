@@ -48,8 +48,3 @@ networks:
   wpNetwork:
 volumes:
   db_data: 
-
-
-
-# Tarminal code
-docker-compose up -d
