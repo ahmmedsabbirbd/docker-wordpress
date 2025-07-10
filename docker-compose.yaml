@@ -47,8 +47,19 @@ services:
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD} # Same as Database
     networks:
       - wpNetwork
+      - shared_net
+    
+  # Mailpit - Email testing
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "8025:8025" # Web UI
+    networks:
+      - wpNetwork
 
 networks:
   wpNetwork:
+  shared_net:
+    external: true
 volumes:
   db_data: 
